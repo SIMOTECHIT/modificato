@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <style>
+      body {
+        background-color: #121212;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+      }
+      .theme-toggle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #6200ea;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .theme-toggle:hover {
+        background: #3700b3;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    <div id="root"></div>
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle("light-theme");
+        if (document.body.classList.contains("light-theme")) {
+          document.body.style.backgroundColor = "#ffffff";
+          document.body.style.color = "#000000";
+        } else {
+          document.body.style.backgroundColor = "#121212";
+          document.body.style.color = "white";
+        }
+      }
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
